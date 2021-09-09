@@ -39,7 +39,7 @@ class CreateVoter extends Component
         ],[
             'name.required' => 'Nombre requerido',
             'last.required' => 'Apellido requerido',
-            'dni.unique' => 'Este número ya se encuentra en uso por '. $lider->lider->name . ' '. $lider->lider->last,
+            'dni.unique' => 'Este número ya se encuentra en uso',
             'dni.numeric' => 'La cedula debe ser un numero sin letras o caracteres',
             'dni.required' => 'La cedula es campo obligatorio',
             'phone.required' => 'Teléfono requerido',
