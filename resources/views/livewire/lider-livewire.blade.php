@@ -25,7 +25,7 @@
                     </div>
                     <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
                         <div class="w-full overflow-x-auto">
-                            @if( count($liders) )
+                            @if( count($liders) && auth()->user()->role == 5)
                                 <table class="w-full">
                                     <thead>
                                     <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
