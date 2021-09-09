@@ -55,7 +55,10 @@ class CreateVoter extends Component
             'user_id' => \Auth::id(),
             'status' => 1
         ]);
-        $url = "https://api103.hablame.co/";
+        $urlsms = "https://api103.hablame.co/api/sms/v3/send/marketing";
+        $apikeysms = "";
+        $tokensms = "";
+        $accountsms = "";
         $this->reset([
             'open','name','last','dni','phone','phone2'
         ]);
