@@ -19,7 +19,7 @@ class CreateLidersTable extends Migration
             $table->string('last');
             $table->bigInteger('dni')->unique();
             $table->double('phone');
-            $table->double('phone2')->nullable();
+            $table->double('phone2')->nullable()->default(0);
             $table->integer('status');
             $table->foreignId('coordinator_id')->constrained();
             $table->foreignId('user_id')->constrained();
