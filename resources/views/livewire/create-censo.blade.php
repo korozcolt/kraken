@@ -1,5 +1,5 @@
 <div>
-    <x-jet-danger-button wire:click="$set('open',true)">
+    <x-jet-danger-button wire:click="$set('open',true)" class="flex-1">
         Agregar Censo
     </x-jet-danger-button>
 

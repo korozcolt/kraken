@@ -7,6 +7,7 @@ use App\Models\Coordinator;
 use App\Models\Lider;
 use App\Models\Voter;
 use Livewire\Component;
+use Carbon\Carbon;
 
 
 class Dashboard extends Component
@@ -17,6 +18,8 @@ class Dashboard extends Component
         $coordinatorTotal = Coordinator::all()->count();
         $liderTotal = Lider::all()->count();
         $voterTotal = Voter::all()->count();
-        return view('livewire.dashboard',compact('censoTotal','coordinatorTotal','liderTotal','voterTotal'));
+        $voterPerDay = Voter::whereDate('created_at',Carbon::now())->count();
+        $liderPerDay = Lider::whereDate('created_at',Carbon::now())->count();
+        return view('livewire.dashboard',compact('censoTotal','coordinatorTotal','liderTotal','voterTotal','voterPerDay','liderPerDay'));
     }
 }

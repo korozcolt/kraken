@@ -9,8 +9,8 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <section class="container mx-auto p-6">
-                    <div class="px-8 py-4 flex items-center">
-                        <div class="flex items-center">
+                    <div class="px-8 py-4 items-center">
+                        <div class="items-center">
                             <span>Mostrar</span>
                             <select wire:model="cant" class="mx-2 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
                                 <option value="10">10</option>
@@ -20,7 +20,7 @@
                             </select>
                             <span> entradas</span>
                         </div>
-                        <x-jet-input type="text" wire:model="search" class="flex-1 mr-4 ml-4" placeholder="Buscar..."/>
+                        <x-jet-input type="text" wire:model="search" class=" mr-4 ml-4" placeholder="Buscar..."/>
                         @livewire('create-voter')
                     </div>
                     <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">

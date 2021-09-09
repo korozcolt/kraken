@@ -25,6 +25,7 @@
                                     {{ $censoTotal }}
                                 </p>
                             </div>
+
                         </div>
                         <div class="flex items-center p-4 bg-white rounded-lg shadow-xs">
                             <div class="p-3 mr-4 text-green-500 bg-green-100 rounded-full">
@@ -75,6 +76,42 @@
                                 </p>
                                 <p class="text-lg font-semibold text-gray-700">
                                     {{ $voterTotal }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-white rounded-lg shadow-xs">
+                            <div
+                                class="p-3 mr-4 text-yellow-500 bg-yellow-100 rounded-full">
+                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="8" r="7"></circle>
+                                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="mb-2 text-sm font-medium text-gray-600">
+                                    Total Votantes por día
+                                </p>
+                                <p class="text-lg font-semibold text-gray-700">
+                                    {{ $voterPerDay }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-white rounded-lg shadow-xs">
+                            <div
+                                class="p-3 mr-4 text-yellow-500 bg-yellow-100 rounded-full">
+                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="8" r="7"></circle>
+                                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="mb-2 text-sm font-medium text-gray-600">
+                                    Total Lider por día
+                                </p>
+                                <p class="text-lg font-semibold text-gray-700">
+                                    {{ $liderPerDay }}
                                 </p>
                             </div>
                         </div>
