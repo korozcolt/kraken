@@ -5,6 +5,7 @@ use App\Http\Livewire\CoordinatorLivewire;
 use App\Http\Livewire\VoterLivewire;
 use App\Http\Livewire\LiderLivewire;
 use App\Http\Livewire\CensoLivewire;
+use App\Http\Livewire\UserCount;
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,3 +19,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/coordinators', Coordinato
 Route::middleware(['auth:sanctum', 'verified'])->get('/liders', LiderLivewire::class)->name('lider');
 Route::middleware(['auth:sanctum', 'verified'])->get('/voters', VoterLivewire::class)->name('voter');
 Route::middleware(['auth:sanctum', 'verified'])->get('/censo', CensoLivewire::class)->name('censo');
+Route::middleware(['auth:sanctum', 'verified'])->get('/users-count', UserCount::class)->name('users-count');

@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -56,4 +57,12 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function voter(){
+        return $this->hasMany(Voter::class);
+    }
+
+    public function voterPerDay(){
+        return $this->hasMany(Voter::class)->whereHas('created_at',Carbon::now());
+    }
 }
