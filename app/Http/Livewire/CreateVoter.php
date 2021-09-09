@@ -39,7 +39,7 @@ class CreateVoter extends Component
         ],[
             'name.required' => 'Nombre requerido',
             'last.required' => 'Apellido requerido',
-            'dni.unique' => 'Este número ya se encuentra en uso por'. $lider->lider->name . ' '. $lider->lider->last,
+            'dni.unique' => 'Este número ya se encuentra en uso por '. $lider->lider->name . ' '. $lider->lider->last,
             'dni.numeric' => 'La cedula debe ser un numero sin letras o caracteres',
             'dni.required' => 'La cedula es campo obligatorio',
             'phone.required' => 'Teléfono requerido',
@@ -57,7 +57,7 @@ class CreateVoter extends Component
         ]);
         $url = "https://api103.hablame.co/";
         $this->reset([
-            'open','name','last','phone','phone2'
+            'open','name','last','dni','phone','phone2'
         ]);
         $this->emitTo('voter-livewire','render');
         $this->emit('alert','Se ha creado un Registro de Coordinador');
