@@ -90,7 +90,7 @@ class VoterLivewire extends Component
         $this->open_edit = true;
     }
 
-    public function delete($voter){
+    public function delete(Voter $voter){
         $voter->delete();
     }
 
