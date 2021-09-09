@@ -46,8 +46,8 @@ class CreateVoter extends Component
             'lider_id.required' => 'Lider requerido',
         ]);
         Voter::create([
-            'name' => $this->name,
-            'last' => $this->last,
+            'name' => strtoupper($this->name),
+            'last' => strtoupper($this->last),
             'dni' => $this->dni,
             'phone' => $this->phone,
             'phone2' => $this->phone2,

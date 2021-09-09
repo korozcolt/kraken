@@ -15,7 +15,7 @@ class LiderSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get(public_path("data/liders.json"));
+        $json = File::get(public_path("data/liders_alt.json"));
         $liders= json_decode($json);
         foreach ($liders as $key => $value) {
             Lider::create([
@@ -23,7 +23,7 @@ class LiderSeeder extends Seeder
                 "last" => $value->last,
                 "dni" => $value->dni,
                 "phone" => $value->phone,
-                "phone2" => $value->phone2,
+                "phone2" => 0,
                 "status" => 1,
                 "coordinator_id" => 1,
                 "user_id" => 1,
