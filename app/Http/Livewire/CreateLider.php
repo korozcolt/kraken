@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Censo;
 use App\Models\Coordinator;
 use App\Models\Lider;
 use Livewire\Component;
@@ -28,6 +29,17 @@ class CreateLider extends Component
         'phone.required' => 'Teléfono requerido',
         'coordinator_id.required' => 'Coordinador requerido',
     ];
+
+    public function updatingDni(){
+        $lider = Censo::where('dni','LIKE','%'.$this->dni.'%')->first();
+        if(!empty($lider)){
+            $this->name = $lider->name;
+            $this->last = $lider->last;
+        }else{
+            $this->name = "";
+            $this->last = "";
+        }
+    }
 
     public function render(){
         $coordinators = Coordinator::all();

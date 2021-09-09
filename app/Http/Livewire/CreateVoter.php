@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Censo;
 use App\Models\Voter;
 use App\Models\Lider;
 use Livewire\Component;
@@ -28,6 +29,17 @@ class CreateVoter extends Component
         'phone.required' => 'Teléfono requerido',
         'lider_id.required' => 'Lider requerido',
     ];
+
+    public function updated(){
+        $voter = Censo::where('dni','LIKE','%'.$this->dni.'%')->first();
+        if(!empty($voter)){
+            $this->name = $voter->name;
+            $this->last = $voter->last;
+        }else{
+            $this->name = "";
+            $this->last = "";
+        }
+    }
 
     public function render(){
         $liders = Lider::all();
