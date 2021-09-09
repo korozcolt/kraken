@@ -42,7 +42,7 @@ class CreateLider extends Component
     }
 
     public function render(){
-        $coordinators = Coordinator::all();
+        $coordinators = Coordinator::orderBy('name')->get();
         return view('livewire.create-lider',compact('coordinators'));
     }
 

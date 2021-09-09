@@ -42,7 +42,7 @@ class CreateVoter extends Component
     }
 
     public function render(){
-        $liders = Lider::all();
+        $liders = Lider::orderBy('name')->get();
         return view('livewire.create-voter',compact('liders'));
     }
 
