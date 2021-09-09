@@ -30,7 +30,7 @@ class CreateVoter extends Component
         'lider_id.required' => 'Lider requerido',
     ];
 
-    public function updatingDni(){
+    public function updatedDni(){
         $voter = Censo::where('dni','LIKE','%'.$this->dni.'%')->first();
         if(!empty($voter)){
             $this->name = $voter->name;
