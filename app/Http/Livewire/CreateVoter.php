@@ -12,24 +12,6 @@ class CreateVoter extends Component
     public $open = false;
     public $name, $last, $dni, $phone, $phone2, $lider_id;
 
-    protected $rules = [
-        'name' => 'required|max:50',
-        'last' => 'required|max:50',
-        'dni' => 'numeric|required|unique:voters,dni',
-        'phone' => 'required',
-        'lider_id' => 'required'
-    ];
-
-    protected $messages = [
-        'name.required' => 'Nombre requerido',
-        'last.required' => 'Apellido requerido',
-        'dni.unique' => 'Este número ya se encuentra en uso',
-        'dni.numeric' => 'La cedula debe ser un numero sin letras o caracteres',
-        'dni.required' => 'La cedula es campo obligatorio',
-        'phone.required' => 'Teléfono requerido',
-        'lider_id.required' => 'Lider requerido',
-    ];
-
     public function updatedDni(){
         $voter = Censo::where('dni','LIKE','%'.$this->dni.'%')->first();
         if(!empty($voter)){
@@ -47,7 +29,22 @@ class CreateVoter extends Component
     }
 
     public function save(){
-        $this->validate();
+        $lider = Voter::where('dni',$this->dni)->first();
+        $this->validate([
+            'name' => 'required|max:50',
+            'last' => 'required|max:50',
+            'dni' => 'numeric|required|unique:voters,dni',
+            'phone' => 'required',
+            'lider_id' => 'required'
+        ],[
+            'name.required' => 'Nombre requerido',
+            'last.required' => 'Apellido requerido',
+            'dni.unique' => 'Este número ya se encuentra en uso por'. $lider->lider->name . ' '. $lider->lider->last,
+            'dni.numeric' => 'La cedula debe ser un numero sin letras o caracteres',
+            'dni.required' => 'La cedula es campo obligatorio',
+            'phone.required' => 'Teléfono requerido',
+            'lider_id.required' => 'Lider requerido',
+        ]);
         Voter::create([
             'name' => $this->name,
             'last' => $this->last,
