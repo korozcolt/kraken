@@ -70,7 +70,7 @@ class LiderLivewire extends Component
         }else{
             $liders = [];
         }
-        $coordinators = Coordinator::where('status',1)->get();
+        $coordinators = Coordinator::where('status',1)->orderBy('name')->get();
         return view('livewire.lider-livewire',compact('liders','coordinators'));
     }
 

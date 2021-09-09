@@ -71,7 +71,7 @@ class VoterLivewire extends Component
         }else{
             $voters = [];
         }
-        $liders = Lider::where('status',1)->get();
+        $liders = Lider::where('status',1)->orderBy('name')->get();
         return view('livewire.voter-livewire',compact('voters','liders'));
     }
 
