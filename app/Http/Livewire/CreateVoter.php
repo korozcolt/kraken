@@ -30,7 +30,7 @@ class CreateVoter extends Component
         'lider_id.required' => 'Lider requerido',
     ];
 
-    public function updated(){
+    public function updatingDni(){
         $voter = Censo::where('dni','LIKE','%'.$this->dni.'%')->first();
         if(!empty($voter)){
             $this->name = $voter->name;
@@ -58,6 +58,7 @@ class CreateVoter extends Component
             'user_id' => \Auth::id(),
             'status' => 1
         ]);
+        $url = "https://api103.hablame.co/";
         $this->reset([
             'open','name','last','phone','phone2'
         ]);
