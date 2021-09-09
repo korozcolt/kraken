@@ -120,6 +120,26 @@
                     }
                 })
             });
+            Livewire.on('deleteVoter', voterId => {
+                Swal.fire({
+                    title: '¿Estas seguro que quieres borrar este registro?',
+                    text: "No podrás revertir esto.",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Si, Borralo!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Livewire.emitTo('voter-livewire','delete',voterId);
+                        Swal.fire(
+                            'Borrado!',
+                            'Tu registro ha sido borrado.',
+                            'success'
+                        )
+                    }
+                })
+            });
         </script>
     </body>
 </html>
