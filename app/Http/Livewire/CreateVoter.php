@@ -48,7 +48,7 @@ class CreateVoter extends Component
 
     public function save(){
         $this->validate();
-        Lider::create([
+        Voter::create([
             'name' => $this->name,
             'last' => $this->last,
             'dni' => $this->dni,
