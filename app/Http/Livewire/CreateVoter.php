@@ -12,7 +12,7 @@ class CreateVoter extends Component
     public $open = false;
     public $name, $last, $dni, $phone, $phone2, $lider_id;
 
-    public function updatingDni(){
+    public function updatedDni(){
         $voter = Censo::where('dni','like',$this->dni.'%')->first();
         if(!empty($voter)){
             $this->name = $voter->name;
@@ -33,7 +33,7 @@ class CreateVoter extends Component
         $this->validate([
             'name' => 'required|max:50',
             'last' => 'required|max:50',
-            'dni' => 'numeric|required|unique:voters,dni',
+            'dni' => 'required|unique:voters,dni',
             'phone' => 'required',
             'lider_id' => 'required'
         ],[
@@ -48,7 +48,7 @@ class CreateVoter extends Component
         Voter::create([
             'name' => strtoupper($this->name),
             'last' => strtoupper($this->last),
-            'dni' => $this->dni,
+            'dni' => trim($this->dni),
             'phone' => $this->phone,
             'phone2' => $this->phone2,
             'lider_id' => $this->lider_id,
