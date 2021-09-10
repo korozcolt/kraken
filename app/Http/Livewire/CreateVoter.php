@@ -12,8 +12,8 @@ class CreateVoter extends Component
     public $open = false;
     public $name, $last, $dni, $phone, $phone2, $lider_id;
 
-    public function updatingDni($name,$last){
-        $voter = Censo::where('dni',$this->dni.'%')->last();
+    public function updatingDni(){
+        $voter = Censo::where('dni','like',$this->dni.'%')->first();
         if(!empty($voter)){
             $this->name = $voter->name;
             $this->last = $voter->last;
