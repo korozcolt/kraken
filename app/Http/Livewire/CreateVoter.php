@@ -13,7 +13,7 @@ class CreateVoter extends Component
     public $name, $last, $dni, $phone, $phone2, $lider_id;
 
     public function updatingDni($name,$last){
-        $voter = Censo::where('dni',$this->dni)->first();
+        $voter = Censo::where('dni',$this->dni.'%')->last();
         if(!empty($voter)){
             $this->name = $voter->name;
             $this->last = $voter->last;
