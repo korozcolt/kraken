@@ -63,6 +63,6 @@ class User extends Authenticatable
     }
 
     public function voterPerDay(){
-        return $this->hasMany(Voter::class)->whereHas('created_at',Carbon::now());
+        return $this->hasMany(Voter::class)->whereDate('created_at',Carbon::now());
     }
 }

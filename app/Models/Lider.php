@@ -22,4 +22,9 @@ class Lider extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function voters()
+    {
+        return $this->hasMany(Voter::class);
+    }
 }

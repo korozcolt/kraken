@@ -30,6 +30,13 @@ class CreateVoter extends Component
 
     public function save(){
         $lider = Voter::where('dni',$this->dni)->first();
+        if($lider->lider != null){
+            $name = $lider->lider->name;
+            $last = $lider->lider->last;
+        }else{
+            $name = "";
+            $last = "";
+        }
         $this->validate([
             'name' => 'required|max:50',
             'last' => 'required|max:50',
@@ -39,8 +46,7 @@ class CreateVoter extends Component
         ],[
             'name.required' => 'Nombre requerido',
             'last.required' => 'Apellido requerido',
-            'dni.unique' => 'Este número ya se encuentra en uso',
-            'dni.numeric' => 'La cedula debe ser un numero sin letras o caracteres',
+            'dni.unique' => 'Este número ya se encuentra en uso por '.$name.' '.$last,
             'dni.required' => 'La cedula es campo obligatorio',
             'phone.required' => 'Teléfono requerido',
             'lider_id.required' => 'Lider requerido',
@@ -63,6 +69,6 @@ class CreateVoter extends Component
             'open','name','last','dni','phone','phone2'
         ]);
         $this->emitTo('voter-livewire','render');
-        $this->emit('alert','Se ha creado un Registro de Coordinador');
+        $this->emit('alert','Se ha creado un Registro de Votante');
     }
 }

@@ -9,7 +9,7 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="container px-6 mx-auto grid">
                     <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
-                        <div class="flex items-center p-4 bg-white rounded-lg shadow-xs">
+                        <div class="flex items-center p-4 bg-white rounded-lg shadow-xs" wire:poll.10s>
                             <div class="p-3 mr-4 text-blue-500 bg-blue-100 rounded-full">
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                     <path

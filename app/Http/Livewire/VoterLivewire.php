@@ -98,6 +98,6 @@ class VoterLivewire extends Component
         $this->validate();
         $this->voter->save();
         $this->reset(['open_edit']);
-        $this->emit('alert','Se ha editado un Registro de Coordinador');
+        $this->emit('alert','Se ha editado un Registro de lider');
     }
 }
