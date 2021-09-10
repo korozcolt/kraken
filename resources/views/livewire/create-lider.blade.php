@@ -35,7 +35,7 @@
             </div>
             <div class="mb-4">
                 <x-jet-label value="Coordinador"></x-jet-label>
-                <select wire:model="coordinator_id" class="select2 w-full mx-2 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
+                <select wire:model="coordinator_id" class="w-full mx-2 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
                     @foreach( $coordinators as $item )
                         <option value="{{ $item->id }}">{{ $item->name }} {{ $item->last }}</option>
                     @endforeach

@@ -65,7 +65,7 @@ class VoterLivewire extends Component
         if($this->readyToLoad){
             $voters = voter::where('name','like','%' . $this->search . '%')
                 ->orWhere('last','like','%' . $this->search . '%')
-                ->orWhere('dni','like','%' . $this->search . '%')
+                ->orWhere('dni','=',$this->search)
                 ->orderBy($this->sort, $this->direction)
                 ->paginate($this->cant);
         }else{
