@@ -69,7 +69,7 @@
                                             <td class="px-4 py-3 text-ms font-semibold border">{{ $value->dni}}</td>
                                             <td class="px-4 py-3 text-sm border">{{ 0 }}</td>
                                             <td class="px-4 py-3 text-xs border text-center">
-                                                <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm text-center"> {{ $value->voter->count() }} </span>
+                                                <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm text-center"> {{ 0 }} </span>
                                             </td>
 
                                         </tr>

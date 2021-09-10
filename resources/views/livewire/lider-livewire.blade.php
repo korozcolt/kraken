@@ -98,7 +98,7 @@
                                             <td class="px-4 py-3 border">
                                                 <div class="flex items-center text-sm">
                                                     <div>
-                                                        <p class="font-semibold text-black">{{ $value->name}} {{ $value->last}}</p>
+                                                        <p class="font-semibold underline hover:underline"><a target="_blank" href="{{ route('lider.list',$value->id) }}">{{ $value->name}} {{ $value->last}}</a></p>
                                                     </div>
                                                 </div>
                                             </td>
@@ -106,7 +106,7 @@
                                             <td class="px-4 py-3 text-sm border">{{ $value->phone }}</td>
                                             <td class="px-4 py-3 text-sm border">{{ $value->coordinator->name }} {{ $value->coordinator->last }}</td>
                                             <td class="px-4 py-3 text-xs border text-center">
-                                                <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm text-center"> {{ $value->voter->count() }} </span>
+                                                <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm text-center"> </span>
                                             </td>
                                             <td class="px-4 py-3 text-xs border text-center flex">
                                                 <a href="#" class="text-gray-400 hover:text-gray-100 ml-2" wire:click="edit({{$value}})">

@@ -20,3 +20,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/liders', LiderLivewire::c
 Route::middleware(['auth:sanctum', 'verified'])->get('/voters', VoterLivewire::class)->name('voter');
 Route::middleware(['auth:sanctum', 'verified'])->get('/censo', CensoLivewire::class)->name('censo');
 Route::middleware(['auth:sanctum', 'verified'])->get('/users-count', UserCount::class)->name('users-count');
+Route::middleware(['auth:sanctum', 'verified'])->get('/lider/{id}', function($id){
+    $voters = \App\Models\Voter::where('lider_id',$id)->orderBy('name','asc')->get();
+    $lider = \App\Models\Lider::find($id);
+    return view('lists',compact('voters','lider'));
+})->name('lider.list');

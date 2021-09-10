@@ -2003,6 +2003,9 @@ select {
 	--tw-text-opacity: 1;
 	color: rgba(243, 244, 246, var(--tw-text-opacity));
 }
+.hover\:underline:hover {
+	text-decoration: underline;
+}
 .focus\:z-10:focus {
 	z-index: 10;
 }
