@@ -97,7 +97,7 @@
                                             <td class="px-4 py-3 text-sm border">{{ $value->phone }}</td>
                                             <td class="px-4 py-3 text-sm border">{{ $value->lider->name }} {{ $value->lider->last }}</td>
                                             <td class="px-4 py-3 text-xs border text-center">
-                                                <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm text-center"> {{  "" }} </span>
+                                                <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm text-center"> {{  $value->censo->program }} </span>
                                             </td>
                                             <td class="px-4 py-3 text-xs border text-center flex">
                                                 <a href="#" class="text-gray-400 hover:text-gray-100 ml-2" wire:click="edit({{$value}})">
