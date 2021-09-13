@@ -14,6 +14,10 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
+            opacity: ['disabled'],
+            textColor: ['visited'],
+            backgroundColor: ['checked'],
+            borderColor: ['checked'],
         },
     },
 

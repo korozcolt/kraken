@@ -59,6 +59,6 @@ class CreateLider extends Component
             'open','name','last','phone','phone2'
         ]);
         $this->emitTo('lider-livewire','render');
-        $this->emit('alert','Se ha creado un Registro de Coordinador');
+        $this->emit('alert','Se ha creado un Registro de Lider');
     }
 }

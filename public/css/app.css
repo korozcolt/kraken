@@ -1864,7 +1864,7 @@ select {
 	-moz-osx-font-smoothing: grayscale;
 }
 .opacity-0 {
-	opacity: 0;
+	opacity: disabled;
 }
 .opacity-100 {
 	opacity: 1;
@@ -2128,6 +2128,9 @@ select {
 .disabled\:opacity-25:disabled {
 	opacity: 0.25;
 }
+.disabled\:opacity-50:disabled {
+	opacity: 0.5;
+}
 @media (min-width: 640px) {
 
 	.sm\:col-span-4 {
@@ -2361,6 +2364,10 @@ select {
 
 	.md\:border-l {
 		border-left-width: 1px;
+	}
+
+	.md\:border-t-0 {
+		border-top-color: checked;
 	}
 }
 @media (min-width: 1024px) {

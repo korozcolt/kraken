@@ -110,6 +110,10 @@
                                                 <a href="#" class="text-gray-400 hover:text-gray-100 ml-2" wire:click="$emit('deleteVoter',{{ $value->id }})">
                                                     <i class="material-icons-round text-base">delete_outline</i>
                                                 </a>
+                                                <a href="#" class="text-gray-400 hover:text-gray-100 ml-2" wire:click="status_update({{ $value->id }})">
+                                                    <i class="material-icons-round text-base">pending_actions</i>
+                                                </a>
+
                                             </td>
                                         </tr>
                                     @endforeach
@@ -166,6 +170,42 @@
         <x-slot name="footer">
             <x-jet-secondary-button wire:click="$set('open_edit',false)">Cancelar</x-jet-secondary-button>
             <x-jet-danger-button wire:click="update" wire:loading.attr="disabled" class="disabled:opacity-25">Actualizar</x-jet-danger-button>
+        </x-slot>
+    </x-jet-dialog-modal>
+    <x-jet-dialog-modal wire:model="open_status">
+        <x-slot name="title">
+            Registro de Llamada del Lider {{ $voter->name }} {{ $voter->last }}
+        </x-slot>
+        <x-slot name="content">
+            <div class="mb-4">
+                <x-jet-label value="Registro de llamada" class="text-left"></x-jet-label>
+                <select wire:model="voter.status" class="w-full mx-2 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
+                    <option value="1">INGRESADO - NO LLAMADO</option>
+                    <option value="2">LLAMADO - NO CONTESTA</option>
+                    <option value="3">LLAMADO - NÚMERO EQUIVOCADO</option>
+                    <option value="4">LLAMADO - MAL ESCRITO O APAGADO</option>
+                    <option value="5">LLAMADO - NO SABE NO RESPONDE</option>
+                    <option value="6">LLAMADO - VOTA EN CONTRA</option>
+                    <option value="7">LLAMADO - VOTA EN BLANCO</option>
+                    <option value="8">LLAMADO - VOTA A FAVOR</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <x-jet-label value="Nombre" class="text-left"></x-jet-label>
+                <x-jet-input disabled type="text" class="w-full disabled:opacity-50" wire:model="voter.name"></x-jet-input>
+            </div>
+            <div class="mb-4">
+                <x-jet-label value="Apellido" class="text-left"></x-jet-label>
+                <x-jet-input disabled type="text" class="w-full disabled:opacity-50" wire:model="voter.last"></x-jet-input>
+            </div>
+            <div class="mb-4">
+                <x-jet-label value="Cedula" class="text-left"></x-jet-label>
+                <x-jet-input disabled type="number" class="w-full disabled:opacity-50" wire:model="voter.dni"></x-jet-input>
+            </div>
+        </x-slot>
+        <x-slot name="footer">
+            <x-jet-secondary-button wire:click="$set('open_status',false)">Cancelar</x-jet-secondary-button>
+            <x-jet-danger-button wire:click="updateCall" wire:loading.attr="disabled" class="disabled:opacity-25">Actualizar</x-jet-danger-button>
         </x-slot>
     </x-jet-dialog-modal>
 </div>

@@ -16,6 +16,7 @@ class VoterLivewire extends Component
     public $lider;
     public $voter;
     public $open_edit = false;
+    public $open_status = false;
     public $sort = 'id';
     public $direction = 'desc';
     public $cant = '10';
@@ -33,7 +34,8 @@ class VoterLivewire extends Component
         'voter.last' => 'required',
         'voter.dni' => 'required|numeric',
         'voter.phone' => 'required',
-        'voter.lider_id' => 'required'
+        'voter.lider_id' => 'required',
+        'voter.status' => 'numeric',
     ];
 
     protected $messages = [
@@ -43,6 +45,7 @@ class VoterLivewire extends Component
         'dni.required' => 'La cedula es campo obligatorio',
         'phone.required' => 'Número requerido',
         'lider_id.required' => 'Lider requerido',
+        'status.numeric' => 'Estado de llamada requerida',
     ];
 
     protected $listeners = [
@@ -90,6 +93,18 @@ class VoterLivewire extends Component
         $this->open_edit = true;
     }
 
+    public function status_update(Voter $voter){
+        $this->voter = $voter;
+        $this->open_status = true;
+    }
+
+    public function updateCall(Voter $voter){
+        $this->validate();
+        $this->voter->save();
+        $this->reset(['open_status']);
+        $this->emit('alert','Se ha editado un Registro de llamada');
+    }
+
     public function delete(Voter $voter){
         $voter->delete();
     }
@@ -98,6 +113,6 @@ class VoterLivewire extends Component
         $this->validate();
         $this->voter->save();
         $this->reset(['open_edit']);
-        $this->emit('alert','Se ha editado un Registro de lider');
+        $this->emit('alert','Se ha editado un Registro de votante');
     }
 }
