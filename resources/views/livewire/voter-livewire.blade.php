@@ -174,7 +174,7 @@
     </x-jet-dialog-modal>
     <x-jet-dialog-modal wire:model="open_status">
         <x-slot name="title">
-            Registro de Llamada del Lider {{ $voter->name }} {{ $voter->last }}
+            Registro de llamada del votante {{ $voter->name }} {{ $voter->last }}
         </x-slot>
         <x-slot name="content">
             <div class="mb-4">
@@ -184,10 +184,11 @@
                     <option value="2">LLAMADO - NO CONTESTA</option>
                     <option value="3">LLAMADO - NÚMERO EQUIVOCADO</option>
                     <option value="4">LLAMADO - MAL ESCRITO O APAGADO</option>
-                    <option value="5">LLAMADO - NO SABE NO RESPONDE</option>
-                    <option value="6">LLAMADO - VOTA EN CONTRA</option>
-                    <option value="7">LLAMADO - VOTA EN BLANCO</option>
-                    <option value="8">LLAMADO - VOTA A FAVOR</option>
+                    <option value="5">LLAMADO - FUERA DEL RANGO</option>
+                    <option value="6">LLAMADO - NO SABE NO RESPONDE</option>
+                    <option value="7">LLAMADO - VOTA EN CONTRA</option>
+                    <option value="8">LLAMADO - VOTA EN BLANCO</option>
+                    <option value="9">LLAMADO - VOTA A FAVOR</option>
                 </select>
             </div>
             <div class="mb-4">
