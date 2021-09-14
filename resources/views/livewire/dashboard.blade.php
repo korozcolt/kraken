@@ -115,6 +115,168 @@
                                 </p>
                             </div>
                         </div>
+                        <div class="flex items-center p-4 bg-white rounded-lg shadow-xs">
+                            <div
+                                class="p-3 mr-4 text-yellow-500 bg-yellow-100 rounded-full">
+                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="8" r="7"></circle>
+                                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="mb-2 text-sm font-medium text-gray-600">
+                                    NO LLAMADOS
+                                </p>
+                                <p class="text-lg font-semibold text-gray-700">
+                                    {{ $voterNotCalledTotal }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-white rounded-lg shadow-xs">
+                            <div
+                                class="p-3 mr-4 text-yellow-500 bg-yellow-100 rounded-full">
+                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="8" r="7"></circle>
+                                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="mb-2 text-sm font-medium text-gray-600">
+                                    NO CONTESTA
+                                </p>
+                                <p class="text-lg font-semibold text-gray-700">
+                                    {{ $voterNotAnswerTotal }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-white rounded-lg shadow-xs">
+                            <div
+                                class="p-3 mr-4 text-yellow-500 bg-yellow-100 rounded-full">
+                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="8" r="7"></circle>
+                                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="mb-2 text-sm font-medium text-gray-600">
+                                    NUMERO EQUIVOCADO
+                                </p>
+                                <p class="text-lg font-semibold text-gray-700">
+                                    {{ $voterBadWriteTotal }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-white rounded-lg shadow-xs">
+                            <div
+                                class="p-3 mr-4 text-yellow-500 bg-yellow-100 rounded-full">
+                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="8" r="7"></circle>
+                                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="mb-2 text-sm font-medium text-gray-600">
+                                    MAL ESCRITO O APAGADO
+                                </p>
+                                <p class="text-lg font-semibold text-gray-700">
+                                    {{ $voterWrongNumberTotal }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-white rounded-lg shadow-xs">
+                            <div
+                                class="p-3 mr-4 text-yellow-500 bg-yellow-100 rounded-full">
+                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="8" r="7"></circle>
+                                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="mb-2 text-sm font-medium text-gray-600">
+                                    FUERA DE RANGO
+                                </p>
+                                <p class="text-lg font-semibold text-gray-700">
+                                    {{ $voterOutRangeTotal }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-white rounded-lg shadow-xs">
+                            <div
+                                class="p-3 mr-4 text-yellow-500 bg-yellow-100 rounded-full">
+                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="8" r="7"></circle>
+                                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="mb-2 text-sm font-medium text-gray-600">
+                                    NO SABE NO RESPONDE
+                                </p>
+                                <p class="text-lg font-semibold text-gray-700">
+                                    {{ $voterDontKnowTotal }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-white rounded-lg shadow-xs">
+                            <div
+                                class="p-3 mr-4 text-yellow-500 bg-yellow-100 rounded-full">
+                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="8" r="7"></circle>
+                                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="mb-2 text-sm font-medium text-gray-600">
+                                    EN CONTRA
+                                </p>
+                                <p class="text-lg font-semibold text-gray-700">
+                                    {{ $voterVersusTotal }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-white rounded-lg shadow-xs">
+                            <div
+                                class="p-3 mr-4 text-yellow-500 bg-yellow-100 rounded-full">
+                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="8" r="7"></circle>
+                                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="mb-2 text-sm font-medium text-gray-600">
+                                    EN BLANCO
+                                </p>
+                                <p class="text-lg font-semibold text-gray-700">
+                                    {{ $voterWhiteTotal }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-white rounded-lg shadow-xs">
+                            <div
+                                class="p-3 mr-4 text-yellow-500 bg-yellow-100 rounded-full">
+                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="8" r="7"></circle>
+                                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="mb-2 text-sm font-medium text-gray-600">
+                                    A FAVOR
+                                </p>
+                                <p class="text-lg font-semibold text-gray-700">
+                                    {{ $voterRightTotal }}
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
