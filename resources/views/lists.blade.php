@@ -13,7 +13,7 @@
     <div class="container-fluid mt-4 mr-4 ml-4 mb-6">
         <div class="row bg-secondary mb-2">
             <div class="col-12 text-center">
-                <h1>Listado de {{ $lider->name." ".$lider->last }}</h1>
+                <h1>Listado de {{ $lider->name." ".$lider->last }} - {{ $lider->phone ." - " . $lider->phone2}}</h1>
             </div>
         </div>
 
