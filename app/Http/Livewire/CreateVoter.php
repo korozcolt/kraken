@@ -48,9 +48,13 @@ class CreateVoter extends Component
     }
 
     public function save(){
-        $lider = Voter::where('dni',$this->dni)->first();
+        $voter = voter::where('dni',$this->dni)->first();
         $name = "";
         $last = "";
+        if($voter != null){
+            $name = $voter->lider->name;
+            $last = $voter->lider->last;
+        }
         $this->validate([
             'name' => 'required|max:50',
             'last' => 'required|max:50',
