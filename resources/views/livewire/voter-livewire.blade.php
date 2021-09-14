@@ -25,6 +25,11 @@
                     </div>
                     <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
                         <div class="w-full overflow-x-auto">
+                            @if(!$readyToLoad)
+                                <div class="fa-3x text-center">
+                                    <i class="fas fa-stroopwafel fa-spin"></i>
+                                </div>
+                            @endif
                             @if( count($voters) && auth()->user()->role == 5)
                                 <table class="w-full">
                                     <thead>
