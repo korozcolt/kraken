@@ -27,6 +27,7 @@ class Dashboard extends Component
         $voterVersusTotal = Voter::where('status',7)->count();
         $voterWhiteTotal = Voter::where('status',8)->count();
         $voterRightTotal = Voter::where('status',9)->count();
+        $voterNotAnswerCallOut = Voter::where('status',0)->count();
         $voterPerDay = Voter::whereDate('created_at',Carbon::now())->count();
         $liderPerDay = Lider::whereDate('created_at',Carbon::now())->count();
         return view('livewire.dashboard',compact(
@@ -44,7 +45,8 @@ class Dashboard extends Component
             'voterDontKnowTotal',
             'voterVersusTotal',
             'voterWhiteTotal',
-            'voterRightTotal'
+            'voterRightTotal',
+            'voterNotAnswerCallOut'
         ));
     }
 }

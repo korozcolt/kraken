@@ -209,11 +209,12 @@
                                         CUELGA - NO DA RESPUESTA
                                     </p>
                                     <p class="text-lg font-semibold text-gray-700">
-                                        {{ $voterRightTotal }}
+                                        {{ $voterNotAnswerCallOut }}
                                     </p>
                                 </div>
                             </a>
                         </div>
+
                         <div class="flex items-center p-4 bg-white rounded-lg shadow-xs">
                             <div
                                 class="p-3 mr-4 text-yellow-500 bg-yellow-100 rounded-full">
