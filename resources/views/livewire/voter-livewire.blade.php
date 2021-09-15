@@ -191,6 +191,7 @@
                     <option value="4">LLAMADO - MAL ESCRITO O APAGADO</option>
                     <option value="5">LLAMADO - FUERA DEL RANGO</option>
                     <option value="6">LLAMADO - NO SABE NO RESPONDE</option>
+                    <option value="6">LLAMADO - CUELGA - NO DA RESPUESTA</option>
                     <option value="7">LLAMADO - VOTA EN CONTRA</option>
                     <option value="8">LLAMADO - VOTA EN BLANCO</option>
                     <option value="9">LLAMADO - VOTA A FAVOR</option>
