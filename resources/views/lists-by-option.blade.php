@@ -25,6 +25,7 @@
             <th scope="col" class="text-center">Cedula</th>
             <th scope="col" class="text-center">Telefono</th>
             <th scope="col" class="text-center">Telefono 2</th>
+            <th scope="col" class="text-center">Lider</th>
             <th scope="col" class="text-center">VOTO</th>
         </tr>
         </thead>
