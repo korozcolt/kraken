@@ -30,7 +30,7 @@
                                     <i class="fas fa-stroopwafel fa-spin"></i>
                                 </div>
                             @endif
-                            @if( count($voters) && auth()->user()->role == 5)
+                            @if( count($voters) && (auth()->user()->role == 5 || auth()->user()->role == 6) )
                                 <table class="w-full">
                                     <thead>
                                     <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
@@ -82,9 +82,11 @@
                                                 <i class="fas fa-sort float-right mt-1 text-gray-300"></i>
                                             @endif
                                         </th>
-                                        <th class="px-4 py-3 cursor-pointer text-gray-500">
-                                            Programa
-                                        </th>
+                                        @if(auth()->user()->role == 6)
+                                            <th class="px-4 py-3 cursor-pointer text-gray-500">
+                                                VOTO
+                                            </th>
+                                        @endif
                                         <th class="px-4 py-3 text-gray-500">Tools</th>
                                     </tr>
                                     </thead>
@@ -101,13 +103,31 @@
                                             <td class="px-4 py-3 text-ms font-semibold border">{{ $value->dni}}</td>
                                             <td class="px-4 py-3 text-sm border">{{ $value->phone }}</td>
                                             <td class="px-4 py-3 text-sm border">{{ $value->lider->name }} {{ $value->lider->last }}</td>
+                                            @if(auth()->user()->role == 6)
                                             <td class="px-4 py-3 text-xs border text-center">
-                                                <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm text-center">
-                                                    @if($value->censo != NULL)
-                                                        {{ $value->censo->program }}
-                                                    @endif
-                                                </span>
+                                                @if($value->status == 1)
+                                                    <span class="px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-sm text-center"> INGRESADO - NO LLAMADO </span>
+                                                @elseif ($value->status == 2)
+                                                    <span class="px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-sm text-center"> LLAMADO - NO CONTESTA </span>
+                                                @elseif ($value->status == 3)
+                                                    <span class="px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-sm text-center"> LLAMADO - NÚMERO EQUIVOCADO </span>
+                                                @elseif ($value->status == 4)
+                                                    <span class="px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-sm text-center"> LLAMADO - MAL ESCRITO O APAGADO </span>
+                                                @elseif ($value->status == 5)
+                                                    <span class="px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-sm text-center"> LLAMADO - FUERA DEL RANGO </span>
+                                                @elseif ($value->status == 6)
+                                                    <span class="px-2 py-1 font-semibold leading-tight text-yellow-600 bg-yellow-100 rounded-sm text-center"> LLAMADO - NO SABE NO RESPONDE </span>
+                                                @elseif ($value->status == 7)
+                                                    <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-sm text-center"> LLAMADO - VOTA EN CONTRA </span>
+                                                @elseif ($value->status == 8)
+                                                    <span class="px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-sm text-center"> LLAMADO - VOTA EN BLANCO </span>
+                                                @elseif ($value->status == 9)
+                                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm text-center"> LLAMADO - VOTA A FAVOR </span>
+                                                @elseif ($value->status == 0)
+                                                    <span class="px-2 py-1 font-semibold leading-tight text-red-600 bg-red-100 rounded-sm text-center"> LLAMADO - CUELGA - NO DA RESPUESTA </span>
+                                                @endif
                                             </td>
+                                            @endif
                                             <td class="px-4 py-3 text-xs border text-center flex">
                                                 <a href="#" class="text-gray-400 hover:text-gray-100 ml-2" wire:click="edit({{$value}})">
                                                     <i class="material-icons-outlined text-base">edit</i>
