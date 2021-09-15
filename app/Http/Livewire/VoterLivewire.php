@@ -17,8 +17,8 @@ class VoterLivewire extends Component
     public $voter;
     public $open_edit = false;
     public $open_status = false;
-    public $sort = 'id';
-    public $direction = 'desc';
+    public $sort = 'name';
+    public $direction = 'asc';
     public $cant = '10';
     public $readyToLoad = false;
 
