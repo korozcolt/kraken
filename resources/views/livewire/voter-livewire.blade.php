@@ -135,10 +135,11 @@
                                                 <a href="#" class="text-gray-400 hover:text-gray-100 ml-2" wire:click="$emit('deleteVoter',{{ $value->id }})">
                                                     <i class="material-icons-round text-base">delete_outline</i>
                                                 </a>
-                                                <a href="#" class="text-gray-400 hover:text-gray-100 ml-2" wire:click="status_update({{ $value->id }})">
-                                                    <i class="material-icons-round text-base">pending_actions</i>
-                                                </a>
-
+                                                @if($value->status == 1 || $value->status == 2 || $value->status == 3 ||  $value->status == 4 ||  $value->status == 0 )
+                                                    <a href="#" class="text-gray-400 hover:text-gray-100 ml-2" wire:click="status_update({{ $value->id }})">
+                                                        <i class="material-icons-round text-base">pending_actions</i>
+                                                    </a>
+                                                @endif
                                             </td>
                                         </tr>
                                     @endforeach
