@@ -150,7 +150,7 @@
                                         NO CONTESTA
                                     </p>
                                     <p class="text-lg font-semibold text-gray-700">
-                                        {{ $voterNotAnswerTotal }} - {{ round(($voterNotAnswerTotal/$voterTotal)*100,2 }}%
+                                        {{ $voterNotAnswerTotal }} - {{ round(($voterNotAnswerTotal/$voterTotal)*100,2) }}%
                                     </p>
                                 </div>
                             </a>
