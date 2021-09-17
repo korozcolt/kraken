@@ -130,7 +130,7 @@
                                         NO LLAMADOS
                                     </p>
                                     <p class="text-lg font-semibold text-gray-700">
-                                        {{ $voterNotCalledTotal }}
+                                        {{ $voterNotCalledTotal }} - {{ ($voterNotCalledTotal/$voterTotal)*100 }}%
                                     </p>
                                 </div>
                             </a>
@@ -150,7 +150,7 @@
                                         NO CONTESTA
                                     </p>
                                     <p class="text-lg font-semibold text-gray-700">
-                                        {{ $voterNotAnswerTotal }}
+                                        {{ $voterNotAnswerTotal }} - {{ ($voterNotAnswerTotal/$voterTotal)*100 }}%
                                     </p>
                                 </div>
                             </a>
@@ -170,7 +170,7 @@
                                     NUMERO EQUIVOCADO
                                 </p>
                                 <p class="text-lg font-semibold text-gray-700">
-                                    {{ $voterBadWriteTotal }}
+                                    {{ $voterBadWriteTotal }}  - {{ ($voterBadWriteTotal/$voterTotal)*100 }}%
                                 </p>
                             </div>
                             </a>
@@ -190,7 +190,7 @@
                                     MAL ESCRITO O APAGADO
                                 </p>
                                 <p class="text-lg font-semibold text-gray-700">
-                                    {{ $voterWrongNumberTotal }}
+                                    {{ $voterWrongNumberTotal }} - {{ ($voterWrongNumberTotal / $voterTotal)*100 }}%
                                 </p>
                             </div>
                             </a>
@@ -209,7 +209,7 @@
                                         CUELGA - NO DA RESPUESTA
                                     </p>
                                     <p class="text-lg font-semibold text-gray-700">
-                                        {{ $voterNotAnswerCallOut }}
+                                        {{ $voterNotAnswerCallOut }} - {{ ($voterNotAnswerCallOut / $voterTotal)*100 }}%
                                     </p>
                                 </div>
                             </a>
@@ -230,7 +230,7 @@
                                     FUERA DE RANGO
                                 </p>
                                 <p class="text-lg font-semibold text-gray-700">
-                                    {{ $voterOutRangeTotal }}
+                                    {{ $voterOutRangeTotal }} - {{ ($voterOutRangeTotal / $voterTotal)*100 }}%
                                 </p>
                             </div>
                             </a>
@@ -250,7 +250,7 @@
                                     NO SABE NO RESPONDE
                                 </p>
                                 <p class="text-lg font-semibold text-gray-700">
-                                    {{ $voterDontKnowTotal }}
+                                    {{ $voterDontKnowTotal }} - {{ ($voterDontKnowTotal / $voterTotal)*100 }}%
                                 </p>
                             </div>
                             </a>
@@ -269,7 +269,7 @@
                                     EN CONTRA
                                 </p>
                                 <p class="text-lg font-semibold text-gray-700">
-                                    {{ $voterVersusTotal }}
+                                    {{ $voterVersusTotal }} - {{ ($voterVersusTotal / $voterTotal)*100 }}%
                                 </p>
                             </div>
                             </a>
@@ -289,7 +289,7 @@
                                     EN BLANCO
                                 </p>
                                 <p class="text-lg font-semibold text-gray-700">
-                                    {{ $voterWhiteTotal }}
+                                    {{ $voterWhiteTotal }} - {{ ($voterWhiteTotal / $voterTotal)*100 }}%
                                 </p>
                             </div>
                             </a>
@@ -308,7 +308,7 @@
                                     A FAVOR
                                 </p>
                                 <p class="text-lg font-semibold text-gray-700">
-                                    {{ $voterRightTotal }}
+                                    {{ $voterRightTotal }} - {{ ($voterRightTotal / $voterTotal)*100 }}%
                                 </p>
                             </div>
                             </a>
