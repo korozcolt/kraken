@@ -150,7 +150,7 @@
                                         NO CONTESTA
                                     </p>
                                     <p class="text-lg font-semibold text-gray-700">
-                                        {{ $voterNotAnswerTotal }} - {{ round(($voterNotAnswerTotal/$voterTotal)*100,1) }}%
+                                        {{ $voterNotAnswerTotal }} - {{ round((($voterNotAnswerTotal - $voterNotCalledTotal)/$voterTotal)*100,1) }}%
                                     </p>
                                 </div>
                             </a>
@@ -170,7 +170,7 @@
                                     NUMERO EQUIVOCADO
                                 </p>
                                 <p class="text-lg font-semibold text-gray-700">
-                                    {{ $voterBadWriteTotal }}  - {{ round(($voterBadWriteTotal/$voterTotal)*100,1) }}%
+                                    {{ $voterBadWriteTotal }}  - {{ round((($voterBadWriteTotal- $voterNotCalledTotal)/$voterTotal)*100,1) }}%
                                 </p>
                             </div>
                             </a>
@@ -190,7 +190,7 @@
                                     MAL ESCRITO O APAGADO
                                 </p>
                                 <p class="text-lg font-semibold text-gray-700">
-                                    {{ $voterWrongNumberTotal }} - {{ round(($voterWrongNumberTotal / $voterTotal)*100,1) }}%
+                                    {{ $voterWrongNumberTotal }} - {{ round((($voterWrongNumberTotal - $voterNotCalledTotal) / $voterTotal)*100,1) }}%
                                 </p>
                             </div>
                             </a>
@@ -209,7 +209,7 @@
                                         CUELGA - NO DA RESPUESTA
                                     </p>
                                     <p class="text-lg font-semibold text-gray-700">
-                                        {{ $voterNotAnswerCallOut }} - {{ round(($voterNotAnswerCallOut / $voterTotal)*100,1) }}%
+                                        {{ $voterNotAnswerCallOut }} - {{ round((($voterNotAnswerCallOut - $voterNotCalledTotal) / $voterTotal)*100,1) }}%
                                     </p>
                                 </div>
                             </a>
@@ -230,7 +230,7 @@
                                     FUERA DE RANGO
                                 </p>
                                 <p class="text-lg font-semibold text-gray-700">
-                                    {{ $voterOutRangeTotal }} - {{ round(($voterOutRangeTotal / $voterTotal)*100,1) }}%
+                                    {{ $voterOutRangeTotal }} - {{ round((($voterOutRangeTotal - $voterNotCalledTotal) / $voterTotal)*100,1) }}%
                                 </p>
                             </div>
                             </a>
@@ -250,7 +250,7 @@
                                     NO SABE NO RESPONDE
                                 </p>
                                 <p class="text-lg font-semibold text-gray-700">
-                                    {{ $voterDontKnowTotal }} - {{ round(($voterDontKnowTotal / $voterTotal)*100,1) }}%
+                                    {{ $voterDontKnowTotal }} - {{ round((($voterDontKnowTotal - $voterNotCalledTotal) / $voterTotal)*100,1) }}%
                                 </p>
                             </div>
                             </a>
@@ -269,7 +269,7 @@
                                     EN CONTRA
                                 </p>
                                 <p class="text-lg font-semibold text-gray-700">
-                                    {{ $voterVersusTotal }} - {{ round(($voterVersusTotal / $voterTotal)*100,1) }}%
+                                    {{ $voterVersusTotal }} - {{ round((($voterVersusTotal- $voterNotCalledTotal) / $voterTotal)*100,1) }}%
                                 </p>
                             </div>
                             </a>
@@ -289,7 +289,7 @@
                                     EN BLANCO
                                 </p>
                                 <p class="text-lg font-semibold text-gray-700">
-                                    {{ $voterWhiteTotal }} - {{ round(($voterWhiteTotal / $voterTotal)*100,1) }}%
+                                    {{ $voterWhiteTotal }} - {{ round((($voterWhiteTotal - $voterNotCalledTotal) / $voterTotal)*100,1) }}%
                                 </p>
                             </div>
                             </a>
@@ -308,7 +308,7 @@
                                     A FAVOR
                                 </p>
                                 <p class="text-lg font-semibold text-gray-700">
-                                    {{ $voterRightTotal }} - {{ round(($voterRightTotal / $voterTotal)*100,1) }}%
+                                    {{ $voterRightTotal }} - {{ round((($voterRightTotal - $voterNotCalledTotal) / $voterTotal)*100,1) }}%
                                 </p>
                             </div>
                             </a>
