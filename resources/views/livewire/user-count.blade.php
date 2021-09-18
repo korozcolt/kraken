@@ -29,7 +29,7 @@
                                     <i class="fas fa-stroopwafel fa-spin"></i>
                                 </div>
                             @endif
-                            @if( count($users) && auth()->user()->role == 5)
+                            @if( count($users) && auth()->user()->role == 5 || auth()->user()->role == 6 || auth()->user()->role == 2)
                                 <table class="w-full">
                                     <thead>
                                     <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
