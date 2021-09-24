@@ -126,7 +126,7 @@ class ShowPlaces extends Component
                                     })->count();
         $OutCounter = DB::table('voters as v')
             ->leftJoin('censos as c','v.dni','=','c.dni')
-            ->where('c.program','IS NULL')
+            ->where('c.program','IS','NULL')
             ->where(function($query){
                 return $query->where('v.status','=',1)
                     ->orWhere('v.status','=',2)
