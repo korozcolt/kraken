@@ -81,6 +81,6 @@ class ShowPlaces extends Component
                                     })->count();
         $TotalVotoLider = Voter::where('find','=',3)->count();
         $TotalVotoDiplomado = Voter::where('find','=',2)->count();
-        return view('livewire.show-places',compact('B3A203','B2A104','B3A101','B4A102','B4A201'));
+        return view('livewire.show-places',compact('B3A203','B2A104','B3A101','B4A102','B4A201','TotalVotoDiplomado','TotalVotoLider'));
     }
 }
