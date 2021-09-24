@@ -35,7 +35,7 @@ class VoterLivewire extends Component
         'voter.dni' => 'required|numeric',
         'voter.phone' => 'required',
         'voter.lider_id' => 'required',
-        'voter.status' => 'numeric',
+        'voter.find' => 'numeric',
     ];
 
     protected $messages = [
@@ -45,7 +45,7 @@ class VoterLivewire extends Component
         'dni.required' => 'La cedula es campo obligatorio',
         'phone.required' => 'Número requerido',
         'lider_id.required' => 'Lider requerido',
-        'status.numeric' => 'Estado de llamada requerida',
+        'find.numeric' => 'Estado de voto requerido',
     ];
 
     protected $listeners = [
@@ -102,7 +102,7 @@ class VoterLivewire extends Component
         $this->validate();
         $this->voter->save();
         $this->reset(['open_status']);
-        $this->emit('alert','Se ha editado un Registro de llamada');
+        $this->emit('alert','Se ha editado un votante');
     }
 
     public function delete(Voter $voter){

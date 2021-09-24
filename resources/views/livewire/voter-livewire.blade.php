@@ -30,7 +30,7 @@
                                     <i class="fas fa-stroopwafel fa-spin"></i>
                                 </div>
                             @endif
-                            @if( count($voters) && (auth()->user()->role == 5 || auth()->user()->role == 6 || auth()->user()->role == 2) )
+                            @if( count($voters) && (auth()->user()->role == 5 || auth()->user()->role == 6 || auth()->user()->role == 2 || auth()->user()->role == 9) )
                                 <table class="w-full">
                                     <thead>
                                     <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
@@ -135,7 +135,7 @@
                                                 <a href="#" class="text-gray-400 hover:text-gray-100 ml-2" wire:click="$emit('deleteVoter',{{ $value->id }})">
                                                     <i class="material-icons-round text-base">delete_outline</i>
                                                 </a>
-                                                @if($value->status == 1 || $value->status == 2 || $value->status == 3 || $value->status == 0 || $value->status == 6 || $value->status == 4)
+                                                @if($value->find == 0 and auth()->user()->role == 9)
                                                     <a href="#" class="text-gray-400 hover:text-gray-100 ml-2" wire:click="status_update({{ $value->id }})">
                                                         <i class="material-icons-round text-base">pending_actions</i>
                                                     </a>
@@ -200,22 +200,14 @@
     </x-jet-dialog-modal>
     <x-jet-dialog-modal wire:model="open_status">
         <x-slot name="title">
-            Registro de llamada del votante {{ $voter->name }} {{ $voter->last }}
+            Registro de Voto de {{ $voter->name }} {{ $voter->last }}
         </x-slot>
         <x-slot name="content">
             <div class="mb-4">
                 <x-jet-label value="Registro de llamada" class="text-left"></x-jet-label>
-                <select wire:model="voter.status" class="w-full mx-2 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                    <option value="1">INGRESADO - NO LLAMADO</option>
-                    <option value="2">LLAMADO - NO CONTESTA</option>
-                    <option value="3">LLAMADO - NÚMERO EQUIVOCADO</option>
-                    <option value="4">LLAMADO - MAL ESCRITO O APAGADO</option>
-                    <option value="5">LLAMADO - FUERA DEL RANGO</option>
-                    <option value="6">LLAMADO - NO SABE NO RESPONDE</option>
-                    <option value="0">LLAMADO - CUELGA - NO DA RESPUESTA</option>
-                    <option value="7">LLAMADO - VOTA EN CONTRA</option>
-                    <option value="8">LLAMADO - VOTA EN BLANCO</option>
-                    <option value="9">LLAMADO - VOTA A FAVOR</option>
+                <select wire:model="voter.find" class="w-full mx-2 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
+                    <option value="1">VOTA A FAVOR - DIPLOMADO</option>
+                    <option value="2">VOTA A FAVOR - LIDER YAHIR</option>
                 </select>
             </div>
             <div class="mb-4">
