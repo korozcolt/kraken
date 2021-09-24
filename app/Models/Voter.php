@@ -10,7 +10,7 @@ class Voter extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name','last' ,'dni','phone','phone2','lider_id', 'status', 'user_id'
+        'name','last' ,'dni','phone','phone2','lider_id', 'status', 'user_id','find'
     ];
 
     public function lider()

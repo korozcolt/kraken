@@ -82,7 +82,7 @@
                                                 <i class="fas fa-sort float-right mt-1 text-gray-300"></i>
                                             @endif
                                         </th>
-                                        @if(auth()->user()->role == 6)
+                                        @if( auth()->user()->role == 6 and auth()->user()->role == 9)
                                             <th class="px-4 py-3 cursor-pointer text-gray-500">
                                                 VOTO
                                             </th>
@@ -103,7 +103,7 @@
                                             <td class="px-4 py-3 text-ms font-semibold border">{{ $value->dni}}</td>
                                             <td class="px-4 py-3 text-sm border">{{ $value->phone }}</td>
                                             <td class="px-4 py-3 text-sm border">{{ $value->lider->name }} {{ $value->lider->last }}</td>
-                                            @if(auth()->user()->role == 6)
+                                            @if(auth()->user()->role == 6 and auth()->user()->role == 9)
                                             <td class="px-4 py-3 text-xs border text-center">
                                                 @if($value->status == 1)
                                                     <span class="px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-sm text-center"> INGRESADO - NO LLAMADO </span>
@@ -135,7 +135,7 @@
                                                 <a href="#" class="text-gray-400 hover:text-gray-100 ml-2" wire:click="$emit('deleteVoter',{{ $value->id }})">
                                                     <i class="material-icons-round text-base">delete_outline</i>
                                                 </a>
-                                                @if($value->find == 0 and auth()->user()->role == 9)
+                                                @if($value->find == 0)
                                                     <a href="#" class="text-gray-400 hover:text-gray-100 ml-2" wire:click="status_update({{ $value->id }})">
                                                         <i class="material-icons-round text-base">pending_actions</i>
                                                     </a>
