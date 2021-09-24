@@ -79,8 +79,8 @@ class ShowPlaces extends Component
                                             ->orWhere('c.program','like','ESPECIALIZACIÓN NUTRICIÓN ANIMAL')
                                             ->orWhere('c.program','like','ESPECIALIZACIÓN PRODUCCIÓN ANIMAL TROPICAL (RUMIANTES)');
                                     })->count();
-        $TotalVotoLider = Voter::where('find','=',3)->get();
-        $TotalVotoDiplomado = Voter::where('find','=',2)->get();
+        $TotalVotoLider = Voter::where('find','=',3)->count();
+        $TotalVotoDiplomado = Voter::where('find','=',2)->count();
         return view('livewire.show-places',compact('B3A203','B2A104','B3A101','B4A102','B4A201'));
     }
 }
