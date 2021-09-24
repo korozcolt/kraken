@@ -16,7 +16,16 @@ class ShowPlaces extends Component
     {
         $B2A104 = DB::table('voters as v')
                                     ->join('censos as c','v.dni','=','c.dni')
-                                    ->where('v.status','=',9)
+                                    ->where(function($query){
+                                        return $query->where('v.status','=',1)
+                                                    ->orWhere('v.status','=',2)
+                                                    ->orWhere('v.status','=',3)
+                                                    ->orWhere('v.status','=',4)
+                                                    ->orWhere('v.status','=',5)
+                                                    ->orWhere('v.status','=',6)
+                                                    ->orWhere('v.status','=',0)
+                                                    ->orWhere('v.status','=',9);
+                                    })
                                     ->where(function ($query){
                                         return $query->where('c.program','like','INGENIERÍA AGRÍCOLA')
                                             ->orWhere('c.program','like','INGENIERÍA AGROINDUSTRIAL')
@@ -27,7 +36,16 @@ class ShowPlaces extends Component
                                     })->count();
         $B3A101 = DB::table('voters as v')
                                     ->join('censos as c','v.dni','=','c.dni')
-                                    ->where('v.status','=',9)
+            ->where(function($query){
+                return $query->where('v.status','=',1)
+                    ->orWhere('v.status','=',2)
+                    ->orWhere('v.status','=',3)
+                    ->orWhere('v.status','=',4)
+                    ->orWhere('v.status','=',5)
+                    ->orWhere('v.status','=',6)
+                    ->orWhere('v.status','=',0)
+                    ->orWhere('v.status','=',9);
+            })
                                     ->where(function ($query){
                                         return $query->where('c.program','like','ADMINISTRACIÓN DE EMPRESAS')
                                             ->orWhere('c.program','like','CONTADURÍA PÚBLICA')
@@ -43,7 +61,16 @@ class ShowPlaces extends Component
                                     })->count();
         $B3A203 = DB::table('voters as v')
                                      ->join('censos as c','v.dni','=','c.dni')
-                                     ->where('v.status','=',9)
+            ->where(function($query){
+                return $query->where('v.status','=',1)
+                    ->orWhere('v.status','=',2)
+                    ->orWhere('v.status','=',3)
+                    ->orWhere('v.status','=',4)
+                    ->orWhere('v.status','=',5)
+                    ->orWhere('v.status','=',6)
+                    ->orWhere('v.status','=',0)
+                    ->orWhere('v.status','=',9);
+            })
                                      ->where(function ($query){
                                          return $query->where('c.program','like','%EDU%')
                                                       ->orWhere('c.program','like','%LIC%')
@@ -58,7 +85,16 @@ class ShowPlaces extends Component
                                      })->count();
         $B4A102 = DB::table('voters as v')
                                     ->join('censos as c','v.dni','=','c.dni')
-                                    ->where('v.status','=',9)
+            ->where(function($query){
+                return $query->where('v.status','=',1)
+                    ->orWhere('v.status','=',2)
+                    ->orWhere('v.status','=',3)
+                    ->orWhere('v.status','=',4)
+                    ->orWhere('v.status','=',5)
+                    ->orWhere('v.status','=',6)
+                    ->orWhere('v.status','=',0)
+                    ->orWhere('v.status','=',9);
+            })
                                     ->where(function ($query){
                                         return $query->where('c.program','like','FONOAUDIOLOGÍA')
                                             ->orWhere('c.program','like','ENFERMERÍA')
@@ -72,7 +108,16 @@ class ShowPlaces extends Component
                                     })->count();
         $B4A201 = DB::table('voters as v')
                                     ->join('censos as c','v.dni','=','c.dni')
-                                    ->where('v.status','=',9)
+            ->where(function($query){
+                return $query->where('v.status','=',1)
+                    ->orWhere('v.status','=',2)
+                    ->orWhere('v.status','=',3)
+                    ->orWhere('v.status','=',4)
+                    ->orWhere('v.status','=',5)
+                    ->orWhere('v.status','=',6)
+                    ->orWhere('v.status','=',0)
+                    ->orWhere('v.status','=',9);
+            })
                                     ->where(function ($query){
                                         return $query->where('c.program','like','ZOOTECNIA')
                                             ->orWhere('c.program','like','TECNOLOGÍA PRODUCCIÓN AGROPECUARIA')
