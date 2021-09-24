@@ -206,7 +206,8 @@
             <div class="mb-4">
                 <x-jet-label value="Registro de llamada" class="text-left"></x-jet-label>
                 <select wire:model="voter.find" class="w-full mx-2 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                    <option value="2" selected>VOTA A FAVOR - DIPLOMADO</option>
+                    <option value="0">ESCOGE UN TIPO DE VOTO</option>
+                    <option value="2">VOTA A FAVOR - DIPLOMADO</option>
                     <option value="3">VOTA A FAVOR - LIDER YAHIR</option>
                 </select>
             </div>
