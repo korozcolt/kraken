@@ -125,7 +125,7 @@ class ShowPlaces extends Component
                                             ->orWhere('c.program','like','ESPECIALIZACIÓN PRODUCCIÓN ANIMAL TROPICAL (RUMIANTES)');
                                     })->count();
         $OutCounter = DB::table('voters as v')
-            ->leftJoin('censos as c','v.dni','=','c.dni')
+            ->rightJoin('censos as c','v.dni','=','c.dni')
             ->where(function($query){
                 return $query->where('v.status','=',1)
                     ->orWhere('v.status','=',2)
