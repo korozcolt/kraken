@@ -135,7 +135,7 @@
                                                 <a href="#" class="text-gray-400 hover:text-gray-100 ml-2" wire:click="$emit('deleteVoter',{{ $value->id }})">
                                                     <i class="material-icons-round text-base">delete_outline</i>
                                                 </a>
-                                                @if($value->find == 0)
+                                                @if($value->find == 0 and auth()->user()->role == 9)
                                                     <a href="#" class="text-gray-400 hover:text-gray-100 ml-2" wire:click="status_update({{ $value->id }})">
                                                         <i class="material-icons-round text-base">pending_actions</i>
                                                     </a>

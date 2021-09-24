@@ -124,8 +124,20 @@ class ShowPlaces extends Component
                                             ->orWhere('c.program','like','ESPECIALIZACIÓN NUTRICIÓN ANIMAL')
                                             ->orWhere('c.program','like','ESPECIALIZACIÓN PRODUCCIÓN ANIMAL TROPICAL (RUMIANTES)');
                                     })->count();
+        $OutCounter = DB::table('voters as v')
+            ->leftJoin('censos as c','v.dni','=','c.dni')
+            ->where(function($query){
+                return $query->where('v.status','=',1)
+                    ->orWhere('v.status','=',2)
+                    ->orWhere('v.status','=',3)
+                    ->orWhere('v.status','=',4)
+                    ->orWhere('v.status','=',5)
+                    ->orWhere('v.status','=',6)
+                    ->orWhere('v.status','=',0)
+                    ->orWhere('v.status','=',9);
+            })->count();
         $TotalVotoLider = Voter::where('find','=',3)->count();
         $TotalVotoDiplomado = Voter::where('find','=',2)->count();
-        return view('livewire.show-places',compact('B3A203','B2A104','B3A101','B4A102','B4A201','TotalVotoDiplomado','TotalVotoLider'));
+        return view('livewire.show-places',compact('B3A203','B2A104','B3A101','B4A102','B4A201','TotalVotoDiplomado','TotalVotoLider', 'OutCounter'));
     }
 }

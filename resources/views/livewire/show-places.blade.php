@@ -60,6 +60,16 @@
                             <!-- <hr > -->
                         </div>
                         <div class="mt-10 w-72 bg-white max-w-xs mx-auto rounded-sm overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 transform hover:scale-100 cursor-pointer">
+                            <div class="h-20 bg-blue-400 flex items-center justify-between">
+                                <p class="mr-0 text-white text-lg pl-5">FUERA DE CENSO</p>
+                            </div>
+                            <div class="flex justify-between px-5 pt-6 mb-2 text-sm text-gray-600">
+                                <p>TOTAL Aprox.</p>
+                            </div>
+                            <p class="py-4 text-3xl ml-5">{{ $OutCounter }}</p>
+                            <!-- <hr > -->
+                        </div>
+                        <div class="mt-10 w-72 bg-white max-w-xs mx-auto rounded-sm overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 transform hover:scale-100 cursor-pointer">
                             <div class="h-20 bg-yellow-600 flex items-center justify-between">
                                 <p class="mr-0 text-white text-lg pl-5">VOTOS LIDERES</p>
                             </div>
