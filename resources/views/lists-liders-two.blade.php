@@ -16,7 +16,9 @@
                 <h1>Conteo de Votantes por LIDER YAHIR</h1>
             </div>
         </div>
-
+        @php
+            $contadorVotantes = 0;
+            @endphp
         <table class="table table-sm table-hover table-bordered table-striped">
             <thead>
             <tr>
@@ -29,16 +31,21 @@
             </thead>
             <tbody>
             @foreach($lider as $item)
+
                 <tr>
                     <th scope="row" class="text-center">{{$loop->iteration}}</th>
                     <td>{{$item->name}} {{$item->last}}</td>
                     <td>{{$item->dni}}</td>
                     <td>{{$item->phone}}</td>
-                    <td class="text-center">{{$item->voters->count()}}</td>
+                    @php
+                    $contadorVotantes = $contadorVotantes + $item->voters->count();
+                    @endphp
+                    <td class="text-center">{{ $item->voters->count() }}</td>
                 </tr>
             @endforeach
             </tbody>
         </table>
+        <h2> TOTAL VOTOS -> @php echo $contadorVotantes; @endphp</h2>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
