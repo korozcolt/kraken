@@ -30,6 +30,16 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/lider/{id}', function($id
     return view('lists',compact('voters','lider'));
 })->name('lider.list');
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/liders/lider', function(){
+    $lider = \App\Models\Lider::where('status',2)->get();
+    return view('lists-liders-two',compact('lider'));
+})->name('lider.votaciones.yahir');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/liders/diplomado', function(){
+    $lider = \App\Models\Lider::where('status',2)->get();
+    return view('lists-liders-one',compact('lider'));
+})->name('lider.votaciones.diplomado');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/status/{status}', function($status){
     $voters = \App\Models\Voter::with(['lider' => function($q){ $q->orderBy('liders.name','asc');}])->where('status',$status)->get();
     $name_status = "";
