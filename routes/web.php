@@ -31,17 +31,21 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/lider/{id}', function($id
 })->name('lider.list');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/liders/lider', function(){
-    $lider = \App\Models\Lider::where('status',2)->get();
+    $lider = \App\Models\Lider::with(['voters' => function($query){
+        return $query->where('find',4);
+    }])->where('status',2)->get();
     return view('lists-liders-two',compact('lider'));
 })->name('lider.votaciones.yahir');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/liders/diplomado', function(){
-    $lider = \App\Models\Lider::where('status',1)->get();
+    $lider = \App\Models\Lider::with(['voters' => function($query){
+        return $query->where('find',4);
+    }])->where('status',1)->get();
     return view('lists-liders-one',compact('lider'));
 })->name('lider.votaciones.diplomado');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/status/{status}', function($status){
-    $voters = \App\Models\Voter::with(['lider' => function($q){ $q->orderBy('liders.name','asc');}])->where('status',$status)->get();
+    $voters = \App\Models\Voter::with(['lider' => function($q){ return $q->orderBy('liders.name','asc');}])->where('status',$status)->get();
     $name_status = "";
     if($status == 0){
         $name_status = "LLAMADO - CUELGA - NO DA RESPUESTA";
