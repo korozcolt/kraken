@@ -24,7 +24,6 @@
                 <th scope="col" class="text-center">Nombre</th>
                 <th scope="col" class="text-center">Cedula</th>
                 <th scope="col" class="text-center">Telefono</th>
-                <th scope="col" class="text-center">Telefono 2</th>
                 <th scope="col" class="text-center">VOTOS</th>
             </tr>
             </thead>
@@ -35,8 +34,7 @@
                     <td>{{$item->name}} {{$item->last}}</td>
                     <td>{{$item->dni}}</td>
                     <td>{{$item->phone}}</td>
-                    <td>{{$item->phone2}}</td>
-                    <td class="text-center">{{$item->voter->count()}}</td>
+                    <td class="text-center">{{$item->voters->count()}}</td>
                 </tr>
             @endforeach
             </tbody>
