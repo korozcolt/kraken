@@ -36,7 +36,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/liders/lider', function()
 })->name('lider.votaciones.yahir');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/liders/diplomado', function(){
-    $lider = \App\Models\Lider::where('status',2)->get();
+    $lider = \App\Models\Lider::where('status',1)->get();
     return view('lists-liders-one',compact('lider'));
 })->name('lider.votaciones.diplomado');
 
