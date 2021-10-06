@@ -3,8 +3,9 @@ name: kraken_deploy
 on:
   push:
     branches:
-      - master
-      - features/*
+      - main
+      - develop
+      - feature/*
   pull_request:
 
 jobs:
