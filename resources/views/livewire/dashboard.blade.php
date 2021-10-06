@@ -1,7 +1,7 @@
 <div>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}  |   <a class="mr-3" href="{{route('lider.votaciones.diplomado')}}">    DIPLOMADO    </a>   |  <a class="mr-3" href="{{route('lider.votaciones.yahir')}}">     YAHIR     </a>
+            {{ __('Dashboard') }}  |   <a class="mr-3" href="{{route('lider.votaciones.diplomado')}}">    DIPLOMADO     </a>   |  <a class="mr-3" href="{{route('lider.votaciones.yahir')}}">     YAHIR     </a>
         </h2>
 
     </x-slot>
