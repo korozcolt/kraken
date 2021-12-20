@@ -6,27 +6,32 @@
 
         <x-jet-validation-errors class="mb-4" />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('register.perform') }}">
             @csrf
 
             <div>
-                <x-jet-label for="name" value="{{ __('Name') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                <x-jet-label for="firstname" value="{{ __('Nombre') }}" />
+                <x-jet-input style="text-transform: uppercase;" id="firstname" class="block mt-1 w-full" type="text" name="firstname" :value="old('firstname')" required autofocus autocomplete="name" />
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="last" value="{{ __('Apellido') }}" />
-                <x-jet-input id="last" class="block mt-1 w-full" type="text" name="last" :value="old('last')" required autocomplete="last" />
+                <x-jet-label for="lastname" value="{{ __('Apellido') }}" />
+                <x-jet-input style="text-transform: uppercase;" id="lastname" class="block mt-1 w-full" type="text" name="lastname" :value="old('lastname')" required autocomplete="last" />
             </div>
 
             <div class="mt-4">
                 <x-jet-label for="dni" value="{{ __('Cedula') }}" />
-                <x-jet-input id="dni" class="block mt-1 w-full" type="number" name="dni" :value="old('dni')" required autocomplete="dni" />
+                <x-jet-input id="dni" class="block mt-1 w-full" type="number" pattern="[0-9]+" name="dni" :value="old('dni')" required autocomplete="dni" />
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="phone" value="{{ __('Phone') }}" />
-                <x-jet-input id="phone" class="block mt-1 w-full" type="number" name="phone" :value="old('phone')" required autocomplete="phone" />
+                <x-jet-label for="phone" value="{{ __('Teléfono') }}" />
+                <x-jet-input id="phone" class="block mt-1 w-full" type="number" pattern="[0-9]+" name="phone" :value="old('phone')" required autocomplete="phone" />
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="phone_two" value="{{ __('Teléfono 2') }}" />
+                <x-jet-input id="phone_two" class="block mt-1 w-full" type="number" pattern="[0-9]+" name="phone_two" :value="old('phone')" autocomplete="phone_two" />
             </div>
 
             <div class="mt-4">
@@ -35,12 +40,34 @@
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
+                <x-jet-label for="address" value="{{ __('Dirección') }}" />
+                <x-jet-input style="text-transform: uppercase;" id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" required />
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="son_number" value="{{ __('Numero de hijos') }}" />
+                <x-jet-input id="son_number" class="block mt-1 w-full" type="number" pattern="[0-9]+" name="son_number" :value="old('son_number')" />
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="brithdate" value="{{ __('Fecha de Nacimiento') }}" />
+                
+                <div class="relative">
+                    <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                        <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <input datepicker="" datepicker-autohide="" name="birthdate" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 datepicker-input" placeholder="Selecciona una fecha">
+                </div>
+    
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="password" value="{{ __('Contraseña') }}" />
                 <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
+                <x-jet-label for="password_confirmation" value="{{ __('Confirmar Contraseña') }}" />
                 <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 
@@ -62,14 +89,15 @@
             @endif
 
             <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login.show') }}">
                     {{ __('¿Ya se encuentra registrado?') }}
                 </a>
 
                 <x-jet-button class="ml-4">
-                    {{ __('Register') }}
+                    {{ __('Registrar') }}
                 </x-jet-button>
             </div>
         </form>
     </x-jet-authentication-card>
 </x-guest-layout>
+

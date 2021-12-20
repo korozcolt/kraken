@@ -4,13 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Voter extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name','last' ,'dni','phone','phone2','lider_id', 'status', 'user_id','find'
+        'firstname','lastname' ,'dni','phone','phone_two', 
+        'address' ,'birthdate','son_number','status','user_id', 'lider_id'
     ];
 
     public function lider()
@@ -22,7 +24,9 @@ class Voter extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function censo(){
-        return $this->belongsTo(Censo::class,'dni','dni');
+    public function age(){
+        $birthdate = Carbon::parse($this->birthdate);
+        $age = $birthdate->age;
+        return $age;
     }
 }

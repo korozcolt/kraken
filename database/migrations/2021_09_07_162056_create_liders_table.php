@@ -15,12 +15,15 @@ class CreateLidersTable extends Migration
     {
         Schema::create('liders', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('last');
+            $table->string('firstname');
+            $table->string('lastname');
             $table->bigInteger('dni')->unique();
             $table->double('phone');
-            $table->double('phone2')->nullable()->default(0);
-            $table->integer('status');
+            $table->double('phone_two')->nullable()->default(0);
+            $table->string('address')->nullable();
+            $table->date('birthdate')->nullable();
+            $table->integer('son_number')->nullable();
+            $table->enum('status', ['ACTIVE', 'INACTIVE','UNIVERSITY','WITNESS'])->default('ACTIVE');
             $table->foreignId('coordinator_id')->constrained();
             $table->foreignId('user_id')->constrained();
             $table->timestamps();

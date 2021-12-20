@@ -15,14 +15,19 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('last');
-            $table->double('dni')->unique();
-            $table->double('phone');
-            $table->string('email')->unique();
+            $table->string('firstname');
+            $table->string('lastname');
+            $table->bigInteger('dni')->unique();
+            $table->double('phone')->nullable();
+            $table->double('phone_two')->nullable();
+            $table->string('address')->nullable();
+            $table->date('birthdate')->nullable();
+            $table->integer('son_number')->nullable();
+            $table->string('email')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->integer('role')->default(1);
+            $table->enum('role', ['SUPERADMIN', 'ADMIN', 'COORDINATOR','LIDER','USER'])->default('USER');
+            $table->enum('status', ['ACTIVE','INACTIVE'])->default('ACTIVE');
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();

@@ -12,12 +12,12 @@
             </div>
         @endif
 
-        <form method="POST" action="{{ route('login') }}">
+        <form method="POST" action="{{ route('login.perform') }}">
             @csrf
 
             <div>
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                <x-jet-label for="email" value="{{ __('Cedula') }}" />
+                <x-jet-input id="dni" class="block mt-1 w-full" type="text" name="dni" :value="old('dni')" required autofocus />
             </div>
 
             <div class="mt-4">
@@ -44,5 +44,6 @@
                 </x-jet-button>
             </div>
         </form>
+        <p>Si no estas registrado, </p><a href="{{ route('register.show') }}" class="btn btn-warning">Registrate</a>
     </x-jet-authentication-card>
 </x-guest-layout>

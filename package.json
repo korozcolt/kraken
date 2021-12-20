@@ -19,5 +19,9 @@
         "postcss": "^8.1.14",
         "postcss-import": "^14.0.1",
         "tailwindcss": "^2.2.2"
+    },
+    "dependencies": {
+        "@themesberg/flowbite": "^1.2.0",
+        "pikaday": "^1.8.2"
     }
 }

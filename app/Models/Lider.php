@@ -4,13 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Lider extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name','last' ,'dni','phone','phone2','coordinator_id', 'status','user_id'
+        'firstname','lastname' ,'dni','phone','phone_two', 
+        'address' ,'birthdate','son_number','status','user_id', 'coordinator_id'
     ];
 
     public function coordinator()
@@ -26,5 +28,11 @@ class Lider extends Model
     public function voters()
     {
         return $this->hasMany(Voter::class);
+    }
+
+    public function age(){
+        $birthdate = Carbon::parse($this->birthdate);
+        $age = $birthdate->age;
+        return $age;
     }
 }

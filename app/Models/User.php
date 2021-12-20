@@ -25,7 +25,8 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
-        'name','last' ,'dni','phone','email', 'password' ,'role'
+        'firstname','lastname' ,'dni','phone','phone_two', 'password',
+        'role','son_number','status','birthdate','address','email'
     ];
 
     /**
@@ -64,5 +65,9 @@ class User extends Authenticatable
 
     public function voterPerDay(){
         return $this->hasMany(Voter::class)->whereDate('created_at',Carbon::now());
+    }
+
+    public function setPasswordAttribute($value){
+        $this->attributes['password'] = bcrypt($value);
     }
 }

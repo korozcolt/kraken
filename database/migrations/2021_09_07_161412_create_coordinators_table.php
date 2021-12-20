@@ -15,11 +15,15 @@ class CreateCoordinatorsTable extends Migration
     {
         Schema::create('coordinators', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('last');
+            $table->string('firstname');
+            $table->string('lastname');
             $table->bigInteger('dni')->unique();
             $table->double('phone');
-            $table->integer('status');
+            $table->double('phone_two')->nullable()->default(0);
+            $table->string('address')->nullable();
+            $table->date('birthdate')->nullable();
+            $table->integer('son_number')->nullable();
+            $table->enum('status', ['ACTIVE', 'INACTIVE','UNIVERSITY','WITNESS'])->default('ACTIVE');
             $table->timestamps();
         });
     }
